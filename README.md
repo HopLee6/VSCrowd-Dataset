@@ -36,4 +36,3 @@ The videos and annotations can be download at [OneDrive](https://unimelbcloud-my
   year={2021}
 }
 ```
-![image](https://user-images.githubusercontent.com/39694692/181666972-e17983a4-c368-403f-b369-4491d67fcded.png)
