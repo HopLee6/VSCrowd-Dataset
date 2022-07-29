@@ -1,6 +1,6 @@
 # Video Crowd Localization with Multi-focus Gaussian Neighborhood Attention and a Large-Scale Benchmark
 
-This responsity provides the introduction and the access to the VSCrowd dataset proposed in "Video Crowd Localization with Multi-focus Gaussian Neighborhood Attention and a Large-Scale Benchmark" ([Paper](https://arxiv.org/abs/2107.08645)).
+This repository provides the introduction and the access to the VSCrowd dataset proposed in "Video Crowd Localization with Multi-focus Gaussian Neighborhood Attention and a Large-Scale Benchmark" ([Paper](https://arxiv.org/abs/2107.08645)).
 
 ## Introduction
 VSCrowd consists of 634 videos, 479 for training (`train_XXX`) and 137 for testing (`test_XXX`). For each video, the annotations are saved in the corresponding TXT file (`train_XXX.txt` or `test_XXX.txt`), with the following format: 
@@ -36,3 +36,4 @@ The videos and annotations can be download at [OneDrive](https://unimelbcloud-my
   year={2021}
 }
 ```
+![image](https://user-images.githubusercontent.com/39694692/181666972-e17983a4-c368-403f-b369-4491d67fcded.png)
