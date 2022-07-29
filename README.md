@@ -11,11 +11,11 @@ FrameID HeadID x1 y1 x2 y2 p1 p2 HeadID x1 y1 x2 y2 p1 p2 …
 ```
 Each line in the TXT file corresponds to the crowd annotations of a specific frame in the video. In each line, `FrameID` is the ID of the frame and the subsequent is the labels of each head. For each head, we have three labels:
 
-`HeadID`: Tracking ID of the head in the video;
+`HeadID`: Tracking ID of the head in the video for tracking;
 
-`x1 y1 x2 y2`: Bounding box of the head (left, top, right, bottom);
+`x1 y1 x2 y2`: Bounding box of the head (left, top, right, bottom) for detection;
 
-`p1 p2`: Center point of the head. 
+`p1 p2`: Center point of the head for crowd counting/localization. 
 
 Example:
 ```
