@@ -26,7 +26,7 @@ Example:
 
 ## Visualization
 
-The annotations of four videos are visulized as follows (only the first five frames are shown).
+The annotations of four example videos from VSCrowd are visulized as follows (only the first five frames are shown).
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/39694692/181676864-3cbf0fd8-90bb-464f-9f1b-8715f2569c46.svg)
 
