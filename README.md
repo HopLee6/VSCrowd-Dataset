@@ -36,10 +36,13 @@ The videos and annotations can be download at [OneDrive](https://unimelbcloud-my
 
 ## Citation
 ```
-@article{li2021video,
-  title={Video crowd localization with multi-focus gaussian neighbor attention and a large-scale benchmark},
-  author={Li, Haopeng and Liu, Lingbo and Yang, Kunlin and Liu, Shinan and Gao, Junyu and Zhao, Bin and Zhang, Rui and Hou, Jun},
-  journal={arXiv preprint arXiv:2107.08645},
-  year={2021}
-}
+@ARTICLE{9893023,  
+author={Li, Haopeng and Liu, Lingbo and Yang, Kunlin and Liu, Shinan and Gao, Junyu and Zhao, Bin and Zhang, Rui and Hou, Jun},  
+journal={IEEE Transactions on Image Processing},   
+title={Video Crowd Localization With Multifocus Gaussian Neighborhood Attention and a Large-Scale Benchmark},   
+year={2022},  
+volume={31},  
+number={},  
+pages={6032-6047},  
+doi={10.1109/TIP.2022.3205210}}
 ```
