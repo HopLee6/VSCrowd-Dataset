@@ -1,6 +1,10 @@
 # Video Crowd Localization with Multi-focus Gaussian Neighborhood Attention and a Large-Scale Benchmark
 
-This repository provides the introduction and the access to the VSCrowd dataset proposed in "Video Crowd Localization with Multi-focus Gaussian Neighborhood Attention and a Large-Scale Benchmark" ([Paper](https://arxiv.org/abs/2107.08645)).
+Haopeng Li, Lingbo Liu, Kunlin Yang, Shinan Liu, Junyu Gao, Bin Zhao, Rui Zhang, and Jun Hou
+
+IEEE Transactions on Image Processing
+
+This repository provides the introduction and access to the VSCrowd dataset proposed in this work ([Paper](https://ieeexplore.ieee.org/abstract/document/9893023)).
 
 ## Introduction
 VSCrowd consists of 634 videos, 479 for training (`train_XXX`) and 137 for testing (`test_XXX`). For each video, the annotations are saved in the corresponding TXT file (`train_XXX.txt` or `test_XXX.txt`), with the following format: 
@@ -36,13 +40,13 @@ The videos and annotations can be download at [OneDrive](https://unimelbcloud-my
 
 ## Citation
 ```
-@ARTICLE{9893023,  
-author={Li, Haopeng and Liu, Lingbo and Yang, Kunlin and Liu, Shinan and Gao, Junyu and Zhao, Bin and Zhang, Rui and Hou, Jun},  
-journal={IEEE Transactions on Image Processing},   
-title={Video Crowd Localization With Multifocus Gaussian Neighborhood Attention and a Large-Scale Benchmark},   
-year={2022},  
-volume={31},  
-number={},  
-pages={6032-6047},  
-doi={10.1109/TIP.2022.3205210}}
+@article{li2022video,
+  title={Video Crowd Localization With Multifocus Gaussian Neighborhood Attention and a Large-Scale Benchmark},
+  author={Li, Haopeng and Liu, Lingbo and Yang, Kunlin and Liu, Shinan and Gao, Junyu and Zhao, Bin and Zhang, Rui and Hou, Jun},
+  journal={IEEE Transactions on Image Processing},
+  volume={31},
+  pages={6032--6047},
+  year={2022},
+  publisher={IEEE}
+}
 ```
