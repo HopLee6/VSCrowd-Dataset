@@ -37,6 +37,13 @@ The annotations of four example videos from VSCrowd are visulized as follows (on
 ## Download
 The videos and annotations can be download at [OneDrive](https://unimelbcloud-my.sharepoint.com/:f:/g/personal/haopengl1_student_unimelb_edu_au/ElPHq3MxN-NOo0WFMCPU6VQB8Ia8V9S7u2IdrczBHpDjWQ?e=dFJhdP).
 
+## Format Convert
+### yolo format
+convert the format to yolo (eg. label cx cy w h ...)
+
+```python
+python convert_yolo_format.py
+```
 
 ## Citation
 ```
