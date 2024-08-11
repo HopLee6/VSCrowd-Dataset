@@ -1,8 +1,9 @@
 import shutil
+from os import sep
 from pathlib import Path
-import yaml
 
 import numpy as np
+import yaml
 from PIL import Image
 from tqdm import tqdm
 
@@ -13,21 +14,25 @@ save_images_path = ROOT / "images"
 save_labels_path = ROOT / "labels"
 
 
+def create_not_exist(_path: Path):
+    if not _path.exists():
+        _path.mkdir()
+
+
+create_not_exist(save_images_path)
+create_not_exist(save_labels_path)
+
 train_images_path = save_images_path / "train"
 val_images_path = save_images_path / "val"
 
-if not train_images_path.exists():
-    train_images_path.mkdir()
-if not val_images_path.exists():
-    val_images_path.mkdir()
+create_not_exist(train_images_path)
+create_not_exist(val_images_path)
 
 train_labels_path = save_labels_path / "train"
 val_labels_path = save_labels_path / "val"
 
-if not train_labels_path.exists():
-    train_labels_path.mkdir()
-if not val_labels_path.exists():
-    val_labels_path.mkdir()
+create_not_exist(train_labels_path)
+create_not_exist(val_labels_path)
 
 annotations_dir_path = ROOT / "annotations"
 
@@ -36,7 +41,6 @@ annotations = annotations_dir_path.glob("*.txt")
 videos_root_dir_path = ROOT / "videos"
 
 videos_dir_path = videos_root_dir_path.glob("*")
-
 
 # copy image?
 COPY = False
@@ -65,10 +69,9 @@ for video_dir_path in tqdm(videos_dir_path):
         save_label_dir_path = val_labels_path / video_dir_path.name
 
     # create directory
-    if COPY and not save_image_dir_path.exists():
-        save_image_dir_path.mkdir()
-    if not save_label_dir_path.exists():
-        save_label_dir_path.mkdir()
+    if COPY:
+        create_not_exist(save_image_dir_path)
+    create_not_exist(save_label_dir_path)
 
     for line in lines:
         datas = line.split(" ")
@@ -91,16 +94,20 @@ for video_dir_path in tqdm(videos_dir_path):
             cv2.imshow("image", image)
             stop_flag = cv2.waitKey(100)
 
-        if stop_flag == 27 or stop_flag == ord("q"):
-            break
+            if stop_flag == 27 or stop_flag == ord("q"):
+                break
 
         # xyxy => cxcywh
-        datas[..., 3:5] = (datas[..., 1:3] + datas[..., 3:5]) / 2
-        datas[..., 1:3] = datas[..., 1:3] + datas[..., 3:5] / 2
-        bboxes = datas[:, 1:5]
+        datas[..., 0] = (datas[..., 0] + datas[..., 2]) / 2  # x center
+        datas[..., 1] = (datas[..., 1] + datas[..., 3]) / 2  # y center
+        datas[..., 2] = datas[..., 2] - datas[..., 0]  # width
+        datas[..., 3] = datas[..., 3] - datas[..., 1]  # height
 
+        bboxes = datas[:, 1:5]
         bboxes[..., [0, 2]] /= w
         bboxes[..., [1, 3]] /= h
+        # clip bbox
+        bboxes = np.clip(bboxes, 0, 1)
 
         # copy image file to target file
         if COPY:
@@ -108,7 +115,7 @@ for video_dir_path in tqdm(videos_dir_path):
 
         # write txt as yolo format
         save_label_path = save_label_dir_path / (FrameID + ".txt")
-        output_strs = ["0" + " ".join([str(it) for it in bbox]) for bbox in bboxes]
+        output_strs = ["0 " + " ".join([str(it) for it in bbox]) for bbox in bboxes]
         with open(save_label_path, "w") as f:
             f.write("\n".join(output_strs))
         del image
@@ -130,13 +137,13 @@ if GUI:
 dataset_yaml = ROOT / "data.yaml"
 
 if dataset_yaml.exists():
-    # 存在则删除文件
+    # if exist then remove it
     dataset_yaml.unlink()
 
 yaml_data = dict(
     path=str(ROOT),
-    train=str(train_images_path),
-    val=str(val_images_path),
+    train=str(train_images_path).replace(str(ROOT) + sep, f".{sep}"),
+    val=str(val_images_path).replace(str(ROOT) + sep, f".{sep}"),
     nc=1,
     ch=3,
     names=["head"],
