@@ -34,8 +34,8 @@ The annotations of four example videos from VSCrowd are visulized as follows (on
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/39694692/181676864-3cbf0fd8-90bb-464f-9f1b-8715f2569c46.svg)
 
-## Download
-The videos and annotations can be download at [OneDrive](https://unimelbcloud-my.sharepoint.com/:f:/g/personal/haopengl1_student_unimelb_edu_au/ElPHq3MxN-NOo0WFMCPU6VQB8Ia8V9S7u2IdrczBHpDjWQ?e=dFJhdP).
+## Dataset Access
+Please send an email to hoplee95@outlook.com with your **OneDrive email address** to request access.
 
 ## Format Convert
 ### yolo format
