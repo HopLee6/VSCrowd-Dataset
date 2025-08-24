@@ -35,7 +35,12 @@ The annotations of four example videos from VSCrowd are visulized as follows (on
 ![Untitled Diagram](https://user-images.githubusercontent.com/39694692/181676864-3cbf0fd8-90bb-464f-9f1b-8715f2569c46.svg)
 
 ## Dataset Access
-Please send an email to hoplee95@outlook.com with your **OneDrive email address** to request access.
+Please download the dataset from [Hugging Face](https://huggingface.co/datasets/HopLeeTop/VSCrowd/tree/main) and extract its contents as described below:
+```
+zip -FF videos.zip --out combine.zip
+unzip combine.zip
+```
+
 
 ## Format Convert
 ### yolo format
